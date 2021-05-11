@@ -1,0 +1,8 @@
+{
+  "name": "ninja.tunes",
+  "version": "1.0.0",
+  "description": "homepage for ninja.tunes bot using React",
+  "main": "index.js",
+  "author": "cnrad",
+  "license": "MIT"
+}
