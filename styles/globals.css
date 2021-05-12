@@ -1,0 +1,15 @@
+@import url("../public/fonts/stylesheet.css");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Century Gothic", sans-serif;
+  font-size: 16pt;
+  overflow: hidden;
+
+  @media(max-width: 1500px){
+    font-size: 13pt;
+    overflow-y: scroll;
+  }
+}

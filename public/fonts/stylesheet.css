@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('CenturyGothic.eot');
+    src: local('Century Gothic'), local('CenturyGothic'),
+        url('CenturyGothic.eot?#iefix') format('embedded-opentype'),
+        url('CenturyGothic.woff2') format('woff2'),
+        url('CenturyGothic.woff') format('woff'),
+        url('CenturyGothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('CenturyGothic-Bold.eot');
+    src: local('Century Gothic Bold'), local('CenturyGothic-Bold'),
+        url('CenturyGothic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CenturyGothic-Bold.woff2') format('woff2'),
+        url('CenturyGothic-Bold.woff') format('woff'),
+        url('CenturyGothic-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('CenturyGothic-BoldItalic.eot');
+    src: local('Century Gothic Bold Italic'), local('CenturyGothic-BoldItalic'),
+        url('CenturyGothic-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('CenturyGothic-BoldItalic.woff2') format('woff2'),
+        url('CenturyGothic-BoldItalic.woff') format('woff'),
+        url('CenturyGothic-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('CenturyGothic-Italic.eot');
+    src: local('Century Gothic Italic'), local('CenturyGothic-Italic'),
+        url('CenturyGothic-Italic.eot?#iefix') format('embedded-opentype'),
+        url('CenturyGothic-Italic.woff2') format('woff2'),
+        url('CenturyGothic-Italic.woff') format('woff'),
+        url('CenturyGothic-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
