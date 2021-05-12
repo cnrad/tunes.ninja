@@ -1,14 +1,22 @@
 import styled from "styled-components";
+import Head from "next/head";
 
 export default function Home() {
 
   return (
-    <Page>
-        <Container>
-            <GradientText>404</GradientText>
-            <Text>Page not found :(</Text>
-        </Container>
-    </Page>
+    <>
+        <Head>
+            <title>404 - Page Not Found</title>
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        </Head>
+        <Page>
+            <Container>
+                <GradientText>404</GradientText>
+                <Text>Page not found :(</Text>
+            </Container>
+        </Page>
+    </>
   )
 }
 

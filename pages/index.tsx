@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from 'react';
 import { Arrow } from "../Icons";
+import Head from "next/head";
 
 export default function Home() {
 
@@ -42,29 +43,56 @@ export default function Home() {
   setTimeout(() => {setIndexImg(indexImg ? 0 : 1)}, 5000);
 
   return (
-    <Page>
-      <Main>
-        <HeaderBox initial="init" animate="load" variants={pageLoad}>
-          <Logo variants={MainChildren} src="/lilguy.png" />
-          <Title variants={MainChildren}>tunes.<span style={{color: "#972edd"}}>ninja</span></Title>
-          <Description variants={MainChildren}>Find your favorite songs on any service</Description>
-          <Invite href="https://discord.com/oauth2/authorize?client_id=840585628408217610&scope=bot&permissions=19456" whileHover={{color: "#030815", backgroundColor: "#fff", transition: {duration: 0.15, ease: [0, 0.25, 0.75, 1]}}} variants={MainChildren}>
-            add to discord
-            <Arrow />
-          </Invite>
-        </HeaderBox>
-        <AnimatePresence>
-          <ExampleImg
-            key={imageArr[indexImg]}
-            src={imageArr[indexImg]}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{duration: 0.5, ease: "easeInOut"}}
-          />
-        </AnimatePresence>
-      </Main>
-    </Page>
+    <>
+      <Head>
+        <title>tunes.ninja</title>
+        {/* <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" /> */}
+
+        <meta name="title" content="tunes.ninja" />
+        <meta name="description" content="A Discord bot to find your favorite songs on any service." />
+        <meta name="keywords" content="ninja, tunes, tunes.ninja, ninja.tunes, ninjatunes, tunesninja, tunes.ninja bot, invite, bot, discord bot" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tunes.ninja/" />
+        <meta property="og:title" content="tunes.ninja" />
+        <meta property="og:description" content="A Discord bot to find your favorite songs on any service." />
+        <meta property="og:image" content="/meta.png" />
+        
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://tunes.ninja/" />
+        <meta property="twitter:title" content="tunes.ninja" />
+        <meta property="twitter:description" content="A Discord bot to find your favorite songs on any service." />
+        <meta property="twitter:image" content="/meta.png" />
+      </Head>
+
+      <Page>
+        <Main>
+          <HeaderBox initial="init" animate="load" variants={pageLoad}>
+            <Logo variants={MainChildren} src="/lilguy.png" />
+            <Title variants={MainChildren}>tunes.<span style={{color: "#972edd"}}>ninja</span></Title>
+            <Description variants={MainChildren}>Find your favorite songs on any service</Description>
+            <Invite href="https://discord.com/oauth2/authorize?client_id=840585628408217610&scope=bot&permissions=19456" whileHover={{color: "#030815", backgroundColor: "#fff", transition: {duration: 0.15, ease: [0, 0.25, 0.75, 1]}}} variants={MainChildren}>
+              add to discord
+              <Arrow />
+            </Invite>
+          </HeaderBox>
+          <AnimatePresence>
+            <ExampleImg
+              key={imageArr[indexImg]}
+              src={imageArr[indexImg]}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{duration: 0.5, ease: "easeInOut"}}
+            />
+          </AnimatePresence>
+        </Main>
+      </Page>
+    </>
   )
 }
 
