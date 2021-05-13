@@ -50,6 +50,7 @@ const GradientText = styled.div`
     letter-spacing: 0.8rem;
     background: linear-gradient(to right, #7303c0, #f64f59, #fdeff9);
     background-clip: text;
+    -webkit-background-clip: text;
     width: 19rem;
     margin-bottom: 2rem;
 `
