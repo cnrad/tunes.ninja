@@ -102,7 +102,7 @@ export default function Home() {
               Find your favorite songs on any service
             </Description>
             <Invite
-              href="https://discord.com/oauth2/authorize?client_id=840585628408217610&scope=bot&permissions=19456"
+              href="https://discord.com/oauth2/authorize?scope=bot%20applications.commands&client_id=840585628408217610&permissions=19456"
               whileHover={{
                 color: "#030815",
                 backgroundColor: "#fff",
