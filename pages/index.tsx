@@ -31,7 +31,7 @@ export default function Home() {
     },
   };
 
-  const imageArr = ["/Example01.png", "/Example02.png"];
+  const imageArr = ["/spotify.png", "/am.png"];
 
   const [indexImg, setIndexImg] = useState(0);
 
@@ -102,7 +102,7 @@ export default function Home() {
               Find your favorite songs on any service
             </Description>
             <Invite
-              href="https://discord.com/oauth2/authorize?scope=bot%20applications.commands&client_id=840585628408217610&permissions=19456"
+              href="https://tunes.ninja/invite"
               whileHover={{
                 color: "#030815",
                 backgroundColor: "#fff",
@@ -138,7 +138,7 @@ const Page = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: #030815;
+  background: #000000;
 `;
 
 const Main = styled.div`
@@ -206,7 +206,7 @@ const Description = styled(motion.div)`
   font-size: 1rem;
   text-align: left;
   width: 100%;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 
   @media (max-width: 1500px) {
     text-align: center;
