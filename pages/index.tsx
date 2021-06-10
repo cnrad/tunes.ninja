@@ -248,10 +248,10 @@ const ImageContainer = styled.div`
 
 const ExampleImg = styled(motion.img)`
   position: absolute;
-
-  width: 32rem;
-  height: 18rem;
-
+  width: 30rem;
+  height: 16rem;
+  padding: 1rem;
+  background: #36393f;
   border: solid 0.5px #313642;
   border-radius: 0.5rem;
   filter: contrast(110%) drop-shadow(5px 10px 0.75rem #000);
