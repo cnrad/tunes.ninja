@@ -11,6 +11,11 @@ module.exports = {
         source: "/vote",
         destination: "https://top.gg/bot/840585628408217610/vote",
         permanent: true
+      },
+      {
+        source: "/support",
+        destination: "https://discord.gg/bQGrm6xHj7",
+        permanent: true
       }
     ];
   },
