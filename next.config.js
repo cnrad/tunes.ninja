@@ -16,6 +16,11 @@ module.exports = {
         source: "/support",
         destination: "https://discord.gg/bQGrm6xHj7",
         permanent: true
+      },
+      {
+        source: "/github",
+        destination: "https://github.com/jacc/tunes.ninja",
+        permanent: true
       }
     ];
   },
