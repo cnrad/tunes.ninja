@@ -62,7 +62,7 @@ export default function Home() {
         <meta name="title" content="tunes.ninja" />
         <meta
           name="description"
-          content="A Discord bot to find your favorite songs on any service."
+          content="Supercharged Discord bot bridging the gap between music streaming services. Create synced playlists through Discord, get links to all platforms a song is on, and more."
         />
         <meta
           name="keywords"
@@ -76,7 +76,7 @@ export default function Home() {
         <meta property="og:title" content="tunes.ninja" />
         <meta
           property="og:description"
-          content="A Discord bot to find your favorite songs on any service."
+          content="Supercharged Discord bot bridging the gap between music streaming services. Create synced playlists through Discord, get links to all platforms a song is on, and more."
         />
         <meta property="og:image" content="/meta.png" />
 
@@ -86,7 +86,7 @@ export default function Home() {
         <meta property="twitter:title" content="tunes.ninja" />
         <meta
           property="twitter:description"
-          content="A Discord bot to find your favorite songs on any service."
+          content="Supercharged Discord bot bridging the gap between music streaming services. Create synced playlists through Discord, get links to all platforms a song is on, and more."
         />
         <meta property="twitter:image" content="/meta.png" />
       </Head>
@@ -99,7 +99,9 @@ export default function Home() {
               tunes.<span style={{ color: "#972edd" }}>ninja</span>
             </Title>
             <Description variants={MainChildren}>
-              Find your favorite songs on any service
+              Supercharged Discord bot bridging the gap between music streaming
+              services. Create synced playlists through Discord, get links to
+              all platforms a song is on, and more.
             </Description>
             <Invite
               href="https://tunes.ninja/invite"
@@ -111,6 +113,32 @@ export default function Home() {
               variants={MainChildren}
             >
               add to discord
+              <Arrow />
+            </Invite>
+            <br></br>
+            <Invite
+              href="https://tunes.ninja/vote"
+              whileHover={{
+                color: "#030815",
+                backgroundColor: "#fff",
+                transition: { duration: 0.15, ease: [0, 0.25, 0.75, 1] },
+              }}
+              variants={MainChildren}
+            >
+              vote on top.gg
+              <Arrow />
+            </Invite>
+            <br></br>
+            <Invite
+              href="https://tunes.ninja/github"
+              whileHover={{
+                color: "#030815",
+                backgroundColor: "#fff",
+                transition: { duration: 0.15, ease: [0, 0.25, 0.75, 1] },
+              }}
+              variants={MainChildren}
+            >
+              source code
               <Arrow />
             </Invite>
           </HeaderBox>
