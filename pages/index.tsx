@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Arrow } from "../Icons";
 import Head from "next/head";
 
 export default function Home() {
@@ -31,13 +30,13 @@ export default function Home() {
     },
   };
 
-  const imageArr = ["/spotify.png", "/am.png"];
+//   const imageArr = ["/spotify.png", "/am.png"];
 
-  const [indexImg, setIndexImg] = useState(0);
+//   const [indexImg, setIndexImg] = useState(0);
 
-  setTimeout(() => {
-    setIndexImg(indexImg ? 0 : 1);
-  }, 5000);
+//   setTimeout(() => {
+//     setIndexImg(indexImg ? 0 : 1);
+//   }, 5000);
 
   useEffect(() => {
     const images = document.getElementById("example-images");
@@ -92,61 +91,37 @@ export default function Home() {
       </Head>
 
       <Page>
-        <Main>
+        <Top>
           <HeaderBox initial="init" animate="load" variants={pageLoad}>
-            <Logo variants={MainChildren} src="/lilguy.png" />
             <Title variants={MainChildren}>
-              tunes.<span style={{ color: "#972edd" }}>ninja</span>
+              tunes.<span style={{ filter: "drop-shadow(0 0 5px #fff)" }}>ninja</span>
             </Title>
             <Description variants={MainChildren}>
-              Supercharged Discord bot bridging the gap between music streaming
-              services. Create synced playlists through Discord, get links to
-              all platforms a song is on, and more.
+                A supercharged Discord bot bridging the gap between music streaming services. 
             </Description>
-            <Invite
-              href="https://tunes.ninja/invite"
-              whileHover={{
-                color: "#030815",
-                backgroundColor: "#fff",
-                transition: { duration: 0.15, ease: [0, 0.25, 0.75, 1] },
-              }}
-              variants={MainChildren}
-            >
-              add to discord
-              <Arrow />
-            </Invite>
-            <br></br>
-            <Invite
-              href="https://tunes.ninja/vote"
-              whileHover={{
-                color: "#030815",
-                backgroundColor: "#fff",
-                transition: { duration: 0.15, ease: [0, 0.25, 0.75, 1] },
-              }}
-              variants={MainChildren}
-            >
-              vote on top.gg
-              <Arrow />
-            </Invite>
-            <br></br>
-            <Invite
-              href="https://tunes.ninja/github"
-              whileHover={{
-                color: "#030815",
-                backgroundColor: "#fff",
-                transition: { duration: 0.15, ease: [0, 0.25, 0.75, 1] },
-              }}
-              variants={MainChildren}
-            >
-              source code
-              <Arrow />
-            </Invite>
+
+            <LinksBox>
+                <Invite
+                  href="https://tunes.ninja/invite"
+                  variants={MainChildren}
+                >
+                  add to discord
+                </Invite>
+
+                <Invite
+                  href="https://tunes.ninja/vote"
+                  variants={MainChildren}
+                >
+                  vote on top.gg
+                </Invite>
+            </LinksBox>
           </HeaderBox>
+
           <ImageContainer id="example-images">
             <AnimatePresence>
               <ExampleImg
-                key={imageArr[indexImg]}
-                src={imageArr[indexImg]}
+                // key={imageArr[indexImg]}
+                src="https://cdn.discordapp.com/attachments/840639176361771071/879195553920061470/image.psd.png"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -154,134 +129,143 @@ export default function Home() {
               />
             </AnimatePresence>
           </ImageContainer>
-        </Main>
+        </Top>
+        <h1>
+            Scroll Down
+        </h1>
       </Page>
     </>
   );
 }
 
 const Page = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000000;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url('https://cdn.discordapp.com/attachments/840639176361771071/879170608741621810/unknown.png');
+    background-size: cover;
 `;
 
-const Main = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 70%;
-  height: auto;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  @media (max-width: 1500px) {
-    width: 90%;
-    height: auto;
-  }
+const Top = styled.div`
+    position: relative;
+    inset: 0;
+    width: 80%;
+    height: 90vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+    @media (max-width: 1500px) {
+        width: 90%;
+        height: auto;
+    }
 `;
 
 const HeaderBox = styled(motion.div)`
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-
-  width: 25rem;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 1500px) {
-    width: 100%;
+    width: 30rem;
     height: auto;
-  }
-`;
 
-const Logo = styled(motion.img)`
-  width: 7rem;
-  height: 7rem;
-  margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
 
-  @media (max-width: 1500px) {
-    margin-left: calc(50% - 3.5rem);
-  }
+    @media (max-width: 1500px) {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 const Title = styled(motion.div)`
-  color: #fff;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: left;
-  width: 100%;
+    color: #fff;
+    font-size: 3.25rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    width: 100%;
 
-  @media (max-width: 1500px) {
-    text-align: center;
-    font-size: 2.75rem;
-  }
+    @media (max-width: 1500px) {
+        text-align: center;
+        font-size: 2.75rem;
+    }
 `;
 
 const Description = styled(motion.div)`
-  color: #d9d9d9;
-  font-size: 1rem;
-  text-align: left;
-  width: 100%;
-  margin-bottom: 1.5rem;
+    color: #fff;
+    font-size: 1.15rem;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 3.5rem;
 
-  @media (max-width: 1500px) {
-    text-align: center;
-  }
+    @media (max-width: 1500px) {
+        text-align: center;
+    }
 `;
 
+const LinksBox = styled(motion.div)`
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+`
+
 const Invite = styled(motion.a)`
-  text-decoration: none;
-  color: #fff;
-  user-select: none;
-  width: 9rem;
-  padding: 0.65rem 1.25rem 0.75rem 1.25rem;
+    position: sticky;
+    width: auto;
+    text-decoration: none;
+    color: #E0E0E0;
+    user-select: none;
+    padding: 0.25rem 0;
+    text-align: center;
+    margin-right: 2rem;
+    transition: all 0.15s ease-in-out;
 
-  text-align: center;
-  border: solid 1px #fff;
-  border-radius: 10px;
+    &:hover {
+        color: #fff;
+        filter: drop-shadow(0 0 3px #fff);
+    }
 
-  &:hover {
-    cursor: pointer;
-  }
+    &:before {
+        content: "";
+        position: absolute;
+        border-radius: 5px;
+        width: 0;
+        height: 2px;
+        bottom: -1px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: #FF3DEC;
+        filter: drop-shadow(0 0 3px rgba(255, 60, 177, 0.5));
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
 
-  @media (max-width: 1500px) {
-    margin-left: calc(50% - 6rem);
-  }
+    &:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
 `;
 
 const ImageContainer = styled.div`
-  position: absolute;
-  top: calc(50% - 9rem);
-  left: calc(100% - 28rem);
+    position: relative;
+    width: 32rem;
+    height: 18rem;
 
-  width: 32rem;
-  height: 18rem;
-
-  @media (max-width: 1500px) {
-    display: none;
-  }
+    @media (max-width: 1500px) {
+        display: none;
+    }
 `;
 
 const ExampleImg = styled(motion.img)`
-  position: absolute;
-  width: 30rem;
-  height: 16rem;
-  padding: 1rem;
-  background: #36393f;
-  border: solid 0.5px #313642;
-  border-radius: 0.5rem;
-  filter: contrast(110%) drop-shadow(5px 10px 0.75rem #000);
-  pointer-events: none;
+    position: absolute;
+    width: 35rem;
+    height: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
 `;
