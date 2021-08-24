@@ -6,7 +6,6 @@ body {
   margin: 0;
   font-family: "Krona One", sans-serif;
   font-size: 16pt;
-  overflow: hidden;
 
   @media(max-width: 1500px){
     font-size: 13pt;

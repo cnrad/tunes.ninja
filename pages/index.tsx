@@ -130,9 +130,10 @@ export default function Home() {
             </AnimatePresence>
           </ImageContainer>
         </Top>
-        <h1>
+        <ScrollDown>
             Scroll Down
-        </h1>
+        </ScrollDown>
+        <FeatureSection />
       </Page>
     </>
   );
@@ -142,7 +143,7 @@ const Page = styled.div`
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
 
     background: url('https://cdn.discordapp.com/attachments/840639176361771071/879170608741621810/unknown.png');
     background-size: cover;
@@ -269,3 +270,20 @@ const ExampleImg = styled(motion.img)`
     background: rgba(255, 255, 255, 0.1);
     pointer-events: none;
 `;
+
+const ScrollDown = styled(motion.p)`
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #e6e6e6;
+    margin-bottom: 2.25rem;
+`
+const FeatureSection = styled(motion.div)`
+    width: 100%;
+    height: 50rem;
+    background: #270035;
+`
