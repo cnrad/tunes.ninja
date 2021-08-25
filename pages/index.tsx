@@ -1,34 +1,37 @@
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 
 export default function Home() {
-  const pageLoad = {
-    init: {
-      opacity: 0,
-    },
-    load: {
-      opacity: 1,
 
-      transition: {
-        duration: 0.25,
-        ease: "easeIn",
-        staggerChildren: 0.15,
-      },
-    },
-  };
+    const { scrollYProgress } = useViewportScroll()
 
-  const MainChildren = {
-    init: {
-      opacity: 0,
-      x: -25,
-    },
-    load: {
-      opacity: 1,
-      x: 0,
-    },
-  };
+    const pageLoad = {
+        init: {
+            opacity: 0,
+        },
+        load: {
+             opacity: 1,
+
+            transition: {
+                duration: 0.25,
+                ease: "easeIn",
+                staggerChildren: 0.15,
+            },
+        },
+    };
+
+    const MainChildren = {
+        init: {
+            opacity: 0,
+            x: -25,
+        },
+        load: {
+            opacity: 1,
+            x: 0,
+        }
+    };
 
 //   const imageArr = ["/spotify.png", "/am.png"];
 
@@ -133,7 +136,28 @@ export default function Home() {
         <ScrollDown>
             Scroll Down
         </ScrollDown>
-        <FeatureSection />
+
+        <ContentSection>
+            <FeatureGrid>
+                <FeatureRow>
+                    <FeatureBox>
+                        Find the same song on many different streaming services.
+                    </FeatureBox>
+                    <FeatureBox>
+                        Integrated with Spotify and Apple Music so you never miss a beat. 
+                    </FeatureBox>
+                </FeatureRow>
+                <FeatureRow>
+                    <FeatureBox>
+                        Create and customize playlists, directly from Discord.
+                    </FeatureBox>
+                    <FeatureBox>
+                        Missing something? It’s <a href="https://github.com/jacc/tunes.ninja" style={{color: "#FB43FF", textDecoration: "none"}}>open source</a>, feel free to contribute.
+                    </FeatureBox>
+                </FeatureRow>
+            </FeatureGrid>
+        </ContentSection>
+
       </Page>
     </>
   );
@@ -274,16 +298,48 @@ const ExampleImg = styled(motion.img)`
 const ScrollDown = styled(motion.p)`
     width: 100%;
     height: auto;
+
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
+    
     font-size: 0.8rem;
     color: #e6e6e6;
     margin-bottom: 2.25rem;
 `
-const FeatureSection = styled(motion.div)`
+const ContentSection = styled(motion.div)`
+    position: absolute;
     width: 100%;
     height: 50rem;
     background: #270035;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
+
+const FeatureGrid = styled(motion.div)`
+    width: auto;
+    height: auto;
+`
+
+const FeatureRow = styled(motion.div)`
+    margin-top: 2rem;
+    width: 40rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    color: #fff;
+`
+
+const FeatureBox = styled(motion.div)`
+    width: inherit;
+
+    display: inline;
+    padding: 0 3rem;
+    color: inherit;
+`
+
+//change features to display grid later
