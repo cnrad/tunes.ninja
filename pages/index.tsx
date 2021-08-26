@@ -143,21 +143,21 @@ export default function Home() {
                 <FeatureRow>
                     <FeatureBox>
                         <RecordPlayerIcon fill="#BE35FF" />
-                        Find the same song on many different streaming services.
+                        <FeatureText>Find the same song on many different streaming services.</FeatureText>
                     </FeatureBox>
                     <FeatureBox>
                         <SpotifyIcon fill="#1DB954" />
-                        Integrated with Spotify and Apple Music so you never miss a beat. 
+                        <FeatureText>Integrated with Spotify and Apple Music so you never miss a beat.</FeatureText>
                     </FeatureBox>
                 </FeatureRow>
                 <FeatureRow>
                     <FeatureBox>
                         <PlaylistIcon fill="#4478FF" />
-                        Create and customize playlists, directly from Discord.
+                        <FeatureText>Create and customize playlists, directly from Discord.</FeatureText>
                     </FeatureBox>
                     <FeatureBox>
                         <GearsIcon fill="#FA00FF" />
-                        Missing something? It’s <a href="https://github.com/jacc/tunes.ninja" style={{color: "#FB43FF", textDecoration: "none"}}>open source</a>, feel free to contribute.
+                        <FeatureText>Missing something? It’s <a href="https://github.com/jacc/tunes.ninja" style={{color: "#FB43FF", textDecoration: "none"}}>open source</a>, feel free to contribute.</FeatureText>
                     </FeatureBox>
                 </FeatureRow>
             </FeatureGrid>
@@ -342,11 +342,20 @@ const FeatureRow = styled(motion.div)`
 const FeatureBox = styled(motion.div)`
     width: inherit;
 
-    display: inline;
+    display: flex;
     flex-direction: row;
 
     padding: 0 3rem;
     color: inherit;
+`
+
+const FeatureText = styled.div`
+    margin-left: 2rem;
+    display: inline;
+    width: 18rem;
+    height: inhreit;
+    font-size: 1.15rem;
+    line-height: 1.25;
 `
 
 //change features to display grid later
