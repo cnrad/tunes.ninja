@@ -32,3 +32,11 @@ export const PlaylistIcon = (props: any) => {
         </motion.svg>
     )
 }
+
+export const DownArrow = (props: any) => {
+    return(
+        <motion.svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={props.style}>
+            <path d="M21 0.5L24 3.557L12 15.5L-1.33626e-07 3.557L3 0.499999L12 9.5L21 0.5Z" fill={props.fill} />
+        </motion.svg>
+    )
+}

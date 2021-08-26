@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import { RecordPlayerIcon, SpotifyIcon, GearsIcon, PlaylistIcon } from "../src/Icons";
+import { RecordPlayerIcon, SpotifyIcon, GearsIcon, PlaylistIcon, DownArrow } from "../src/Icons";
 
 export default function Home() {
 
@@ -135,7 +135,9 @@ export default function Home() {
           </ImageContainer>
         </Top>
         <ScrollDown>
+            <DownArrow fill="#E6E6E6" style={{marginRight: "1rem"}} />
             Scroll Down
+            <DownArrow fill="#E6E6E6" style={{marginLeft: "1rem"}} />
         </ScrollDown>
 
         <ContentSection>
@@ -305,10 +307,11 @@ const ScrollDown = styled(motion.p)`
     height: auto;
 
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #e6e6e6;
     margin-bottom: 2.25rem;
 `
