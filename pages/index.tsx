@@ -319,11 +319,12 @@ const ContentSection = styled(motion.div)`
     background: #270035;
 
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
 `
 
 const FeatureGrid = styled(motion.div)`
+    margin-top: 5rem;
     width: auto;
     height: auto;
 `
