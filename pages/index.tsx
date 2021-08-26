@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import { RecordPlayerIcon, SpotifyIcon, GearsIcon, PlaylistIcon } from "../src/Icons";
 
 export default function Home() {
 
@@ -141,17 +142,21 @@ export default function Home() {
             <FeatureGrid>
                 <FeatureRow>
                     <FeatureBox>
+                        <RecordPlayerIcon fill="#BE35FF" />
                         Find the same song on many different streaming services.
                     </FeatureBox>
                     <FeatureBox>
+                        <SpotifyIcon fill="#1DB954" />
                         Integrated with Spotify and Apple Music so you never miss a beat. 
                     </FeatureBox>
                 </FeatureRow>
                 <FeatureRow>
                     <FeatureBox>
+                        <PlaylistIcon fill="#4478FF" />
                         Create and customize playlists, directly from Discord.
                     </FeatureBox>
                     <FeatureBox>
+                        <GearsIcon fill="#FA00FF" />
                         Missing something? It’s <a href="https://github.com/jacc/tunes.ninja" style={{color: "#FB43FF", textDecoration: "none"}}>open source</a>, feel free to contribute.
                     </FeatureBox>
                 </FeatureRow>
@@ -338,6 +343,8 @@ const FeatureBox = styled(motion.div)`
     width: inherit;
 
     display: inline;
+    flex-direction: row;
+
     padding: 0 3rem;
     color: inherit;
 `
