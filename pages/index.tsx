@@ -194,6 +194,10 @@ export default function Home() {
                     </motion.span> songs searched
                 </p>
             </Stats>
+
+            <Footer>
+
+            </Footer>
         </ContentSection>
       </Page>
     </>
@@ -407,4 +411,11 @@ const Stats = styled(motion.div)`
     & > p {
         margin-top: 1.5rem;
     }
+`
+
+const Footer = styled(motion.div)`
+    width: 100%;
+    height: auto;
+    padding: 5rem 0;
+    background: #22002E;
 `
