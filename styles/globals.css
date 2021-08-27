@@ -2,13 +2,15 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Krona One", sans-serif;
-  font-size: 16pt;
+    padding: 0;
+    margin: 0;
+    font-family: "Krona One", sans-serif;
+    font-size: 16pt;
+    scroll-behavior: smooth;
 
-  @media(max-width: 1500px){
-    font-size: 13pt;
-    overflow-y: scroll;
-  }
+
+    @media(max-width: 1500px){
+        font-size: 13pt;
+        overflow-y: scroll;
+    }
 }
