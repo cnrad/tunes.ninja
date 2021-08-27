@@ -159,12 +159,42 @@ export default function Home() {
                     </FeatureBox>
                     <FeatureBox>
                         <GearsIcon fill="#FA00FF" />
-                        <FeatureText>Missing something? It’s <a href="https://github.com/jacc/tunes.ninja" style={{color: "#FB43FF", textDecoration: "none"}}>open source</a>, feel free to contribute.</FeatureText>
+                        <FeatureText>Missing something? It’s <motion.a href="https://github.com/jacc/tunes.ninja" 
+                            style={{color: "#FB43FF", textDecoration: "none"}}
+                            whileHover={{color: "#fff" }}
+                            transition={{duration: 0.25, ease: "easeInOut"}}>
+                                open source
+                            </motion.a>, feel free to contribute.</FeatureText>
                     </FeatureBox>
                 </FeatureRow>
             </FeatureGrid>
+            <Stats>
+                <p>
+                    <motion.span 
+                    initial={{opacity: 0}}
+                    animate={{color: "#FB43FF", opacity: 1}}
+                    transition={{duration: 1, ease: "easeInOut"}}>
+                        105
+                    </motion.span> servers
+                </p>
+                <p>
+                    <motion.span 
+                    initial={{opacity: 0}}
+                    animate={{color: "#8000FF", opacity: 1}}
+                    transition={{duration: 1, ease: "easeInOut"}}>
+                        263
+                    </motion.span> active users
+                </p>
+                <p>
+                    <motion.span 
+                    initial={{opacity: 0}}
+                    animate={{color: "#FF00A8", opacity: 1}}
+                    transition={{duration: 1, ease: "easeInOut"}}>
+                        2685
+                    </motion.span> songs searched
+                </p>
+            </Stats>
         </ContentSection>
-
       </Page>
     </>
   );
@@ -322,8 +352,9 @@ const ContentSection = styled(motion.div)`
     background: #270035;
 
     display: flex;
-    align-items: start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
 `
 
 const FeatureGrid = styled(motion.div)`
@@ -356,10 +387,24 @@ const FeatureBox = styled(motion.div)`
 const FeatureText = styled.div`
     margin-left: 2rem;
     display: inline;
-    width: 18rem;
+    width: 17rem;
     height: inhreit;
     font-size: 1.15rem;
     line-height: 1.25;
 `
 
 //change features to display grid later
+
+const Stats = styled(motion.div)`
+    padding: 5rem 0;
+    color: #E6E6E6;
+    width: auto;
+    height: auto;
+    line-height: 1.5rem; 
+    font-size: 1.75rem;
+    text-align: center;
+
+    & > p {
+        margin-top: 1.5rem;
+    }
+`
