@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
+import { motion, AnimatePresence, useViewportScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import { RecordPlayerIcon, SpotifyIcon, GearsIcon, PlaylistIcon, DownArrow } from "../src/Icons";
@@ -54,6 +54,10 @@ export default function Home() {
       images.style.transform = `perspective(1000px) rotateX(${degreeX}deg) rotateY(${degreeY}deg)`;
     });
   }, []);
+
+  const scrollToFeatures = () => {
+        return window.scrollTo(0, 1025);
+  }
 
   return (
     <>
@@ -134,7 +138,7 @@ export default function Home() {
             </AnimatePresence>
           </ImageContainer>
         </Top>
-        <ScrollDown>
+        <ScrollDown whileHover={{color: "#fff"}} onClick={scrollToFeatures}>
             <DownArrow fill="#E6E6E6" style={{marginRight: "1rem"}} />
             Scroll Down
             <DownArrow fill="#E6E6E6" style={{marginLeft: "1rem"}} />
@@ -318,8 +322,10 @@ const Invite = styled(motion.a)`
 
 const ImageContainer = styled.div`
     position: relative;
-    width: 32rem;
-    height: 18rem;
+    width: 37rem;
+    height: 18.2rem;
+    border: solid 1px #999;
+    border-radius: 0.5rem;
 
     @media (max-width: 1500px) {
         display: none;
@@ -352,6 +358,8 @@ const ScrollDown = styled(motion.p)`
     font-size: 0.85rem;
     color: #e6e6e6;
     margin-bottom: 2.25rem;
+
+    cursor: pointer;
 `
 const ContentSection = styled(motion.div)`
     position: absolute;
