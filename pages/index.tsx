@@ -218,7 +218,7 @@ const Top = styled.div`
     position: relative;
     inset: 0;
     width: 80%;
-    height: 90vh;
+    height: 100vh;
     left: 50%;
     transform: translate(-50%, 0);
     display: flex;
@@ -337,6 +337,10 @@ const ExampleImg = styled(motion.img)`
 `;
 
 const ScrollDown = styled(motion.p)`
+    position: absolute;
+    top: 92vh;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 100%;
     height: auto;
 
