@@ -14,7 +14,7 @@ export default function Home() {
 
 			transition: {
 				duration: 0.25,
-				ease: 'easeIn',
+				ease: 'easeInOut',
 				staggerChildren: 0.15,
 			},
 		},
@@ -23,11 +23,11 @@ export default function Home() {
 	const MainChildren = {
 		init: {
 			opacity: 0,
-			x: -25,
+			y: -25,
 		},
 		load: {
 			opacity: 1,
-			x: 0,
+			y: 0,
 		},
 	};
 
@@ -109,11 +109,11 @@ export default function Home() {
 						</Description>
 
 						<LinksBox>
-							<MainLink href="https://tunes.ninja/invite" variants={MainChildren}>
+							<MainLink target="blank" href="https://tunes.ninja/invite" variants={MainChildren}>
 								add to discord
 							</MainLink>
 
-							<MainLink href="https://tunes.ninja/vote" variants={MainChildren}>
+							<MainLink target="blank" href="https://tunes.ninja/vote" variants={MainChildren}>
 								vote on top.gg
 							</MainLink>
 						</LinksBox>
@@ -169,6 +169,7 @@ export default function Home() {
 									<motion.a
 										href="https://github.com/jacc/tunes.ninja"
 										style={{ color: '#FB43FF', textDecoration: 'none' }}
+                                        target="blank"
 										whileHover={{ color: '#fff' }}
 										transition={{ duration: 0.25, ease: 'easeInOut' }}
 									>
@@ -226,9 +227,9 @@ export default function Home() {
 
 					<Footer>
                         <Links>
-                            <FooterLink href="https://twitter.com/laf0nd">Twitter</FooterLink>
-                            <FooterLink href="https://discord.gg/Zucsth6vfw">Discord</FooterLink>
-                            <FooterLink href="https://github.com/jacc/tunes.ninja">GitHub</FooterLink>
+                            <FooterLink target="blank" href="https://twitter.com/laf0nd">Twitter</FooterLink>
+                            <FooterLink target="blank" href="https://discord.gg/Zucsth6vfw">Discord</FooterLink>
+                            <FooterLink target="blank" href="https://github.com/jacc/tunes.ninja">GitHub</FooterLink>
                         </Links>
                     </Footer>
 				</ContentSection>
@@ -261,7 +262,7 @@ const Top = styled.div`
 
 	@media (max-width: 1500px) {
 		width: 90%;
-		height: auto;
+		height: 70vh;
 	}
 `;
 
@@ -310,6 +311,11 @@ const LinksBox = styled(motion.div)`
 	flex-direction: row;
 	align-items: center;
 	justify-content: start;
+
+    @media (max-width: 1500px) {
+        align-content: center;
+        justify-content: center;
+	}
 `;
 
 const MainLink = styled(motion.a)`
@@ -417,6 +423,12 @@ const FeatureRow = styled(motion.div)`
 	justify-content: center;
 	padding: 2rem 0;
 	color: #fff;
+
+    @media (max-width: 1500px) {
+		flex-direction: column;
+        margin-top: 0;
+        padding: 0;
+	}
 `;
 
 const FeatureBox = styled(motion.div)`
@@ -427,6 +439,13 @@ const FeatureBox = styled(motion.div)`
 
 	padding: 0 3rem;
 	color: inherit;
+
+    @media (max-width: 1500px) {
+        align-content: center;
+        justify-content: center;
+        margin-top: 3rem;
+        padding: 0;
+	}
 `;
 
 const FeatureText = styled.div`
@@ -436,6 +455,11 @@ const FeatureText = styled.div`
 	height: inhreit;
 	font-size: 1.15rem;
 	line-height: 1.25;
+
+    @media (max-width: 900px) {
+        font-size: 1rem;
+        width: 13rem;
+	}
 `;
 
 //change features to display grid later
