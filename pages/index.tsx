@@ -364,8 +364,6 @@ const ImageContainer = styled.div`
 	position: relative;
 	width: 37rem;
 	height: 18.2rem;
-	border: solid 1px #999;
-	border-radius: 0.5rem;
 
 	@media (max-width: 1500px) {
 		display: none;
@@ -380,6 +378,8 @@ const ExampleImg = styled(motion.img)`
 	border-radius: 0.5rem;
 	background: rgba(255, 255, 255, 0.1);
 	pointer-events: none;
+
+    border: solid 1px #999;
 `;
 
 const ScrollDown = styled(motion.p)`
@@ -547,6 +547,10 @@ const FooterLink = styled(motion.a)`
     color: #CBCBCB;
     font-size: 1rem;
     transition: all 0.1s ease-in-out;
+
+    @media (max-width: 1500px) {
+		margin: 0 1rem;
+	}
 
     &:hover {
 		color: #fff;
