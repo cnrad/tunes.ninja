@@ -457,7 +457,7 @@ const Stats = styled(motion.div)`
 const Footer = styled(motion.div)`
 	width: 100%;
 	height: auto;
-	padding: 5rem 0;
+	padding: 4.5rem 0;
 	background: #22002e;
 `;
 
@@ -472,10 +472,13 @@ const Links = styled(motion.div)`
 `
 
 const FooterLink = styled(motion.a)`
+    position: relative;
+    width: auto;
     margin: 0 2rem;
     text-decoration: none;
     color: #CBCBCB;
     font-size: 1rem;
+    transition: all 0.1s ease-in-out;
 
     &:hover {
 		color: #fff;
@@ -491,10 +494,10 @@ const FooterLink = styled(motion.a)`
 		bottom: -2px;
 		left: 50%;
 		transform: translate(-50%, 0);
-		background-color: #ff3dec;
-		filter: drop-shadow(0 0 3px rgba(255, 60, 177, 0.5));
+		background-color: #A74FFF;
+		filter: drop-shadow(0 0 3px rgba(128, 0, 255, 0.5));
 		visibility: hidden;
-		transition: all 0.3s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 
 	&:hover:before {
