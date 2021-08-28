@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion, AnimatePresence, useViewportScroll, useTransform } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { RecordPlayerIcon, SpotifyIcon, GearsIcon, PlaylistIcon, DownArrow } from '../src/Icons';
+import * as Icons from '../src/Icons';
 
 export default function Home() {
 	const pageLoad = {
@@ -13,7 +13,7 @@ export default function Home() {
 			opacity: 1,
 
 			transition: {
-				duration: 0.25,
+				duration: 0.5,
 				ease: 'easeInOut',
 				staggerChildren: 0.15,
 			},
@@ -23,11 +23,11 @@ export default function Home() {
 	const MainChildren = {
 		init: {
 			opacity: 0,
-			y: -25,
+			x: -25,
 		},
 		load: {
 			opacity: 1,
-			y: 0,
+			x: 0,
 		},
 	};
 
@@ -108,7 +108,7 @@ export default function Home() {
 							services.
 						</Description>
 
-						<LinksBox>
+						<LinksBox variants={MainChildren}>
 							<MainLink target="blank" href="https://tunes.ninja/invite" variants={MainChildren}>
 								add to discord
 							</MainLink>
@@ -133,22 +133,22 @@ export default function Home() {
 					</ImageContainer>
 				</Top>
 				<ScrollDown whileHover={{ color: '#fff' }} onClick={scrollToFeatures}>
-					<DownArrow fill="#E6E6E6" style={{ marginRight: '1rem' }} />
+					<Icons.DownArrow fill="#E6E6E6" style={{ marginRight: '1rem' }} />
 					Scroll Down
-					<DownArrow fill="#E6E6E6" style={{ marginLeft: '1rem' }} />
+					<Icons.DownArrow fill="#E6E6E6" style={{ marginLeft: '1rem' }} />
 				</ScrollDown>
 
 				<ContentSection>
 					<FeatureGrid>
 						<FeatureRow>
 							<FeatureBox>
-								<RecordPlayerIcon fill="#BE35FF" />
+								<Icons.RecordPlayerIcon fill="#BE35FF" />
 								<FeatureText>
 									Find the same song on many different streaming services.
 								</FeatureText>
 							</FeatureBox>
 							<FeatureBox>
-								<SpotifyIcon fill="#1DB954" />
+								<Icons.SpotifyIcon fill="#1DB954" />
 								<FeatureText>
 									Integrated with Spotify and Apple Music so you never miss a
 									beat.
@@ -157,13 +157,13 @@ export default function Home() {
 						</FeatureRow>
 						<FeatureRow>
 							<FeatureBox>
-								<PlaylistIcon fill="#4478FF" />
+								<Icons.PlaylistIcon fill="#4478FF" />
 								<FeatureText>
-									Create and customize playlists, directly from Discord.
+									Create and customize your playlists, directly from Discord.
 								</FeatureText>
 							</FeatureBox>
 							<FeatureBox>
-								<GearsIcon fill="#FA00FF" />
+								<Icons.GearsIcon fill="#FA00FF" />
 								<FeatureText>
 									Missing something? It’s{' '}
 									<motion.a
@@ -225,10 +225,15 @@ export default function Home() {
 						</p>
 					</Stats>
 
+                    <AddToDiscordMain target="blank" href="https://tunes.ninja/invite">
+                        <Icons.DiscordIcon />
+                        Add to Discord
+                    </AddToDiscordMain>
+
 					<Footer>
                         <Links>
                             <FooterLink target="blank" href="https://twitter.com/laf0nd">Twitter</FooterLink>
-                            <FooterLink target="blank" href="https://discord.gg/Zucsth6vfw">Discord</FooterLink>
+                            <FooterLink target="blank" href="https://discord.gg/Zucsth6vfw">Support</FooterLink>
                             <FooterLink target="blank" href="https://github.com/jacc/tunes.ninja">GitHub</FooterLink>
                         </Links>
                     </Footer>
@@ -399,17 +404,21 @@ const ScrollDown = styled(motion.p)`
 const ContentSection = styled(motion.div)`
 	position: absolute;
 	width: 100%;
-	height: 50rem;
+	height: 60rem;
 	background: #270035;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: start;
+
+    @media (max-width: 1500px) {
+		height: 67rem;
+	}
 `;
 
 const FeatureGrid = styled(motion.div)`
-	margin-top: 5rem;
+	margin-top: 3rem;
 	width: auto;
 	height: auto;
 `;
@@ -465,7 +474,7 @@ const FeatureText = styled.div`
 //change features to display grid later
 
 const Stats = styled(motion.div)`
-	padding: 5rem 0;
+	padding: 3rem;
 	color: #e6e6e6;
 	width: auto;
 	height: auto;
@@ -477,6 +486,41 @@ const Stats = styled(motion.div)`
 		margin-top: 1.5rem;
 	}
 `;
+
+const AddToDiscordMain = styled(motion.a)`
+    text-decoration: none;
+    padding: 1.5rem;
+    border: solid #5865F2 1px;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 1.5px #99a2ff);
+    color: #99a2ff;
+    margin-bottom: 5rem;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    transition: all 0.25s ease-in-out;
+
+    & > svg {
+        margin-right: 1rem;
+        fill: #99a2ff;
+        transition: all 0.25s ease-in-out;
+    }
+
+    &:hover {
+        border-radius: 5px;
+        color: #fff;
+        border: solid #fff 1px;
+        filter: drop-shadow(0 0 4px #99a2ff);
+
+        & > svg {
+            fill: #fff;
+        }
+    }
+`
 
 const Footer = styled(motion.div)`
 	width: 100%;
