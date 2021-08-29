@@ -53,7 +53,7 @@ export default function Home() {
 	}, []);
 
 	const scrollToFeatures = () => {
-		return window.scrollTo(0, 1025);
+		return window.scrollTo(0, 1060);
 	};
 
 	const { scrollYProgress } = useViewportScroll();
