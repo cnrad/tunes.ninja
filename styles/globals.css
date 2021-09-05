@@ -8,9 +8,13 @@ body {
     font-size: 16pt;
     scroll-behavior: smooth;
 
-
     @media(max-width: 1500px){
         font-size: 13pt;
         overflow-y: scroll;
     }
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
 }

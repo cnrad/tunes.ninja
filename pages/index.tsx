@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useViewportScroll, useTransform } from 'framer
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import * as Icons from '../src/Icons';
+// import { startWebGL } from '../src/webgl';
 
 export default function Home() {
 	const pageLoad = {
@@ -31,6 +32,23 @@ export default function Home() {
 		},
 	};
 
+    //
+
+	const statsAnim = {
+		init: {
+			opacity: 0,
+			y: -25,
+		},
+		load: {
+			opacity: 1,
+			y: 0,
+            transition: {
+                duration: 0.5,
+                ease: [0, 0.5, 0.8, 1.1]
+            }
+		}
+	};
+
 	//   const imageArr = ["/spotify.png", "/am.png"];
 
 	//   const [indexImg, setIndexImg] = useState(0);
@@ -49,16 +67,19 @@ export default function Home() {
 			const degreeY = (e.clientX - centerPoint.x) * 0.01;
 
 			images.style.transform = `perspective(1000px) rotateX(${degreeX}deg) rotateY(${degreeY}deg)`;
+            console.log(scrollYProgress.get())
 		});
+
+        // startWebGL();
 	}, []);
 
 	const scrollToFeatures = () => {
-		return window.scrollTo(0, 1060);
+		return window.scrollTo(0, 940);
 	};
 
 	const { scrollYProgress } = useViewportScroll();
-
-	const featureTransform = useTransform(scrollYProgress, [0, 0.5, 1], [-50, -25, 0]);
+    const opacity = useTransform(scrollYProgress, [0, -0.85, -0.86, -2], [0, 0, 1, 1]);
+    const y = useTransform(scrollYProgress, [0, -0.85, -0.86, -2], [-25, -25, 0, 0]);
 
 	return (
 		<>
@@ -139,6 +160,7 @@ export default function Home() {
 				</ScrollDown>
 
 				<ContentSection>
+
 					<FeatureGrid>
 						<FeatureRow>
 							<FeatureBox>
@@ -180,8 +202,9 @@ export default function Home() {
 							</FeatureBox>
 						</FeatureRow>
 					</FeatureGrid>
+
 					<Stats>
-						<p>
+						<motion.p style={{ opacity, y, transition: "all 0.4s ease-in-out" }}>
 							<motion.span
 								initial={{ opacity: 0 }}
 								animate={{
@@ -194,8 +217,8 @@ export default function Home() {
 								105
 							</motion.span>{' '}
 							servers
-						</p>
-						<p>
+						</motion.p>
+						<motion.p style={{ opacity, y, transition: "all 0.4s ease-in-out", transitionDelay: "150ms" }}> 
 							<motion.span
 								initial={{ opacity: 0 }}
 								animate={{
@@ -208,8 +231,8 @@ export default function Home() {
 								263
 							</motion.span>{' '}
 							active users
-						</p>
-						<p>
+						</motion.p>
+						<motion.p style={{ opacity, y, transition: "all 0.4s ease-in-out", transitionDelay: "300ms" }}>
 							<motion.span
 								initial={{ opacity: 0 }}
 								animate={{
@@ -222,7 +245,7 @@ export default function Home() {
 								2685
 							</motion.span>{' '}
 							songs searched
-						</p>
+						</motion.p>
 					</Stats>
 
                     <AddToDiscordMain target="blank" href="https://tunes.ninja/invite">
