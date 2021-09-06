@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useViewportScroll, useTransform } from 'framer
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import * as Icons from '../src/Icons';
-// import { startWebGL } from '../src/webgl';
+import WebGLAnim from '../src/webgl';
 
 export default function Home() {
 	const pageLoad = {
@@ -70,7 +70,7 @@ export default function Home() {
             console.log(scrollYProgress.get())
 		});
 
-        // startWebGL();
+        WebGLAnim();
 	}, []);
 
 	const scrollToFeatures = () => {
@@ -119,6 +119,7 @@ export default function Home() {
 			</Head>
 
 			<Page>
+                <canvas id="gradient-canvas" />
 				<Top>
 					<HeaderBox initial="init" animate="load" variants={pageLoad}>
 						<Title variants={MainChildren}>
@@ -204,7 +205,7 @@ export default function Home() {
 					</FeatureGrid>
 
 					<Stats>
-						<motion.p style={{ opacity, y, transition: "all 0.4s ease-in-out" }}>
+						<motion.p style={{ opacity, y, transition: "all 0.4s ease-out" }}>
 							<motion.span
 								initial={{ opacity: 0 }}
 								animate={{
@@ -218,7 +219,7 @@ export default function Home() {
 							</motion.span>{' '}
 							servers
 						</motion.p>
-						<motion.p style={{ opacity, y, transition: "all 0.4s ease-in-out", transitionDelay: "150ms" }}> 
+						<motion.p style={{ opacity, y, transition: "all 0.4s ease-out", transitionDelay: "150ms" }}> 
 							<motion.span
 								initial={{ opacity: 0 }}
 								animate={{
@@ -232,7 +233,7 @@ export default function Home() {
 							</motion.span>{' '}
 							active users
 						</motion.p>
-						<motion.p style={{ opacity, y, transition: "all 0.4s ease-in-out", transitionDelay: "300ms" }}>
+						<motion.p style={{ opacity, y, transition: "all 0.4s ease-out", transitionDelay: "300ms" }}>
 							<motion.span
 								initial={{ opacity: 0 }}
 								animate={{
@@ -548,7 +549,7 @@ const AddToDiscordMain = styled(motion.a)`
 const Footer = styled(motion.div)`
 	width: 100%;
 	height: auto;
-	padding: 4.5rem 0;
+	padding: 3rem 0;
 	background: #22002e;
 `;
 
@@ -567,8 +568,8 @@ const FooterLink = styled(motion.a)`
     width: auto;
     margin: 0 2rem;
     text-decoration: none;
-    color: #CBCBCB;
-    font-size: 1rem;
+    color: #BBB;
+    font-size: 0.9rem;
     transition: all 0.1s ease-in-out;
 
     @media (max-width: 1500px) {
