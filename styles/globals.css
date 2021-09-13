@@ -7,6 +7,7 @@ body {
     font-family: "Krona One", sans-serif;
     font-size: 16pt;
     scroll-behavior: smooth;
+    scrollbar-width: thin;
 
     @media(max-width: 1500px){
         font-size: 13pt;
@@ -20,7 +21,7 @@ body {
     position: absolute;
     overflow: hidden;
 
-    --gradient-color-1: #371F42;
+    --gradient-color-1: #632a6b;
     --gradient-color-2: #5f317a;
     --gradient-color-3: #4F007C;
     --gradient-color-4: #83008F;
