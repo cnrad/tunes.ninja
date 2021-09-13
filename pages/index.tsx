@@ -32,30 +32,14 @@ export default function Home() {
 		},
 	};
 
-    //
+    const imageArr = ["/am.png", "/playlist.png", "/playOnSpotify.png"];
 
-	const statsAnim = {
-		init: {
-			opacity: 0,
-			y: -25,
-		},
-		load: {
-			opacity: 1,
-			y: 0,
-            transition: {
-                duration: 0.5,
-                ease: [0, 0.5, 0.8, 1.1]
-            }
-		}
-	};
+    const [indexImg, setIndexImg] = useState(0);
 
-	//   const imageArr = ["/spotify.png", "/am.png"];
-
-	//   const [indexImg, setIndexImg] = useState(0);
-
-	//   setTimeout(() => {
-	//     setIndexImg(indexImg ? 0 : 1);
-	//   }, 5000);
+    setTimeout(() => {
+        if(indexImg === 2) return setIndexImg(0);
+        return setIndexImg(indexImg + 1);
+    }, 5000);
 
 	useEffect(() => {
 		const images = document.getElementById('example-images');
@@ -67,8 +51,11 @@ export default function Home() {
 			const degreeY = (e.clientX - centerPoint.x) * 0.01;
 
 			images.style.transform = `perspective(1000px) rotateX(${degreeX}deg) rotateY(${degreeY}deg)`;
-            console.log(scrollYProgress.get())
 		});
+
+        window.addEventListener('mouseout', e => {
+            images.style.transform = `none`;
+        })
 
         WebGLAnim();
 	}, []);
@@ -144,8 +131,8 @@ export default function Home() {
 					<ImageContainer id="example-images">
 						<AnimatePresence>
 							<ExampleImg
-								// key={imageArr[indexImg]}
-								src="https://cdn.discordapp.com/attachments/840639176361771071/879195553920061470/image.psd.png"
+								key={imageArr[indexImg]}
+								src={imageArr[indexImg]}
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
@@ -388,6 +375,10 @@ const ImageContainer = styled.div`
 	position: relative;
 	width: 37rem;
 	height: 18.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
 	@media (max-width: 1500px) {
 		display: none;
@@ -400,7 +391,7 @@ const ExampleImg = styled(motion.img)`
 	height: auto;
 	padding: 1rem;
 	border-radius: 0.5rem;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(200, 200, 200, 0.1);
 	pointer-events: none;
 
     border: solid 1px #999;
