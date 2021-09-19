@@ -5,15 +5,15 @@ import Head from 'next/head';
 import * as Icons from '../src/Icons';
 import WebGLAnim from '../src/webgl';
 
-export default function Home() {
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+export default async function Home() {
 
     const [stats, setStats] = useState({
         guilds: "---",
         songs: "---",
         profiles: "---"
     })
-
-    fetch('http://hook.tunes.ninja/stats').then((res) => res.json()).then(data => setStats(data));
 
 	const pageLoad = {
 		init: {
@@ -67,6 +67,8 @@ export default function Home() {
         })
 
         WebGLAnim();
+
+        fetch('api/getStats').then((res: any) => console.log(res))
 	}, []);
 
 	const scrollToFeatures = () => {
@@ -200,7 +202,7 @@ export default function Home() {
 						</FeatureRow>
 					</FeatureGrid>
 
-					<Stats>
+					{/* <Stats>
 						<motion.p style={{ opacity, y, transition: "all 0.4s ease-out" }}>
 							<motion.span
 								initial={{ opacity: 0 }}
@@ -211,7 +213,7 @@ export default function Home() {
 								}}
 								transition={{ duration: 1, ease: 'easeInOut' }}
 							>
-								{stats.guilds}
+                                {stats.guilds}
 							</motion.span>{' '}
 							servers
 						</motion.p>
@@ -243,7 +245,7 @@ export default function Home() {
 							</motion.span>{' '}
 							songs searched
 						</motion.p>
-					</Stats>
+					</Stats> */}
 
                     <AddToDiscordMain target="blank" href="https://tunes.ninja/invite">
                         <Icons.DiscordIcon />
