@@ -5,15 +5,13 @@ import Head from 'next/head';
 import * as Icons from '../src/Icons';
 import WebGLAnim from '../src/webgl';
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
 export default async function Home() {
 
-    const [stats, setStats] = useState({
+    let stats = {
         guilds: "---",
         songs: "---",
         profiles: "---"
-    })
+    };
 
 	const pageLoad = {
 		init: {
@@ -68,7 +66,7 @@ export default async function Home() {
 
         WebGLAnim();
 
-        fetch('api/getStats').then((res: any) => console.log(res))
+        // fetch('/api/getStats').then((res: any) => console.log(res))
 	}, []);
 
 	const scrollToFeatures = () => {
@@ -202,7 +200,7 @@ export default async function Home() {
 						</FeatureRow>
 					</FeatureGrid>
 
-					{/* <Stats>
+					<Stats>
 						<motion.p style={{ opacity, y, transition: "all 0.4s ease-out" }}>
 							<motion.span
 								initial={{ opacity: 0 }}
@@ -213,7 +211,7 @@ export default async function Home() {
 								}}
 								transition={{ duration: 1, ease: 'easeInOut' }}
 							>
-                                {stats.guilds}
+                                {/* {stats.guilds.toString()} */} 0
 							</motion.span>{' '}
 							servers
 						</motion.p>
@@ -227,7 +225,7 @@ export default async function Home() {
 								}}
 								transition={{ duration: 1, ease: 'easeInOut' }}
 							>
-								{stats.profiles}
+								{/* {stats.profiles.toString()} */} 0
 							</motion.span>{' '}
 							active users
 						</motion.p>
@@ -241,11 +239,11 @@ export default async function Home() {
 								}}
 								transition={{ duration: 1, ease: 'easeInOut' }}
 							>
-								{stats.songs}
+								{/* {stats.songs.toString()} */} 0
 							</motion.span>{' '}
 							songs searched
 						</motion.p>
-					</Stats> */}
+					</Stats>
 
                     <AddToDiscordMain target="blank" href="https://tunes.ninja/invite">
                         <Icons.DiscordIcon />
