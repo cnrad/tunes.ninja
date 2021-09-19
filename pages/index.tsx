@@ -6,6 +6,15 @@ import * as Icons from '../src/Icons';
 import WebGLAnim from '../src/webgl';
 
 export default function Home() {
+
+    const [stats, setStats] = useState({
+        guilds: "---",
+        songs: "---",
+        profiles: "---"
+    })
+
+    fetch('http://hook.tunes.ninja/stats').then((res) => res.json()).then(data => setStats(data));
+
 	const pageLoad = {
 		init: {
 			opacity: 0,
@@ -202,7 +211,7 @@ export default function Home() {
 								}}
 								transition={{ duration: 1, ease: 'easeInOut' }}
 							>
-								105
+								{stats.guilds}
 							</motion.span>{' '}
 							servers
 						</motion.p>
@@ -216,7 +225,7 @@ export default function Home() {
 								}}
 								transition={{ duration: 1, ease: 'easeInOut' }}
 							>
-								263
+								{stats.profiles}
 							</motion.span>{' '}
 							active users
 						</motion.p>
@@ -230,7 +239,7 @@ export default function Home() {
 								}}
 								transition={{ duration: 1, ease: 'easeInOut' }}
 							>
-								2685
+								{stats.songs}
 							</motion.span>{' '}
 							songs searched
 						</motion.p>
