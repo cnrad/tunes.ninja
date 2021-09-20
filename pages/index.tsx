@@ -66,7 +66,13 @@ export default function Home() {
 
         WebGLAnim();
 
-        fetch('api/getStats').then((res: any) => setStats(res))
+        fetch('/api/getStats')
+        .then((res) => {
+            return res.json()
+        })
+        .then(data => 
+            setStats(data)
+        );
 	}, []);
 
 	const scrollToFeatures = () => {
