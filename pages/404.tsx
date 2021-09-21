@@ -1,33 +1,32 @@
-import styled from "styled-components";
-import Head from "next/head";
+import styled from 'styled-components';
+import Head from 'next/head';
 
 export default function Home() {
-
-  return (
-    <>
-        <Head>
-            <title>404 - Page Not Found</title>
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        </Head>
-        <Page>
-            <Container>
-                <GradientText>404</GradientText>
-                <Text>Page not found :(</Text>
-            </Container>
-        </Page>
-    </>
-  )
+    return (
+        <>
+            <Head>
+                <title>404 - Page Not Found</title>
+                <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            </Head>
+            <Page>
+                <Container>
+                    <GradientText>404</GradientText>
+                    <Text>Page not found :(</Text>
+                </Container>
+            </Page>
+        </>
+    );
 }
 
 const Page = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #030815;
-`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #030815;
+`;
 
 const Container = styled.div`
     width: 20rem;
@@ -40,8 +39,7 @@ const Container = styled.div`
     top: 50%;
     left: 5rem;
     transform: translate(0, -50%);
-
-`
+`;
 
 const GradientText = styled.div`
     color: transparent;
@@ -53,9 +51,9 @@ const GradientText = styled.div`
     -webkit-background-clip: text;
     width: 19rem;
     margin-bottom: 2rem;
-`
+`;
 
 const Text = styled.div`
     font-size: 1.75rem;
     color: #ccc;
-`
+`;
