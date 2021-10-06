@@ -293,11 +293,13 @@ export default function Home() {
 const Page = styled.div`
     position: absolute;
     inset: 0;
-    width: 100%;
+    width: 100vw;
     height: auto;
 
     background: url('https://cdn.discordapp.com/attachments/840639176361771071/879170608741621810/unknown.png');
     background-size: cover;
+    overflow-x: hidden;
+    overflow-y: scroll;
 `;
 
 const Top = styled.div`
@@ -341,6 +343,10 @@ const Title = styled(motion.div)`
     @media (max-width: 1500px) {
         text-align: center;
         font-size: 2.75rem;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 2.25rem;
     }
 `;
 
@@ -520,9 +526,12 @@ const FeatureText = styled.div`
         font-size: 1rem;
         width: 13rem;
     }
-`;
 
-//change features to display grid later
+    @media (max-width: 600px) {
+        font-size: 0.9rem;
+        width: 12rem;
+    }
+`;
 
 const Stats = styled(motion.div)`
     padding: 3rem;

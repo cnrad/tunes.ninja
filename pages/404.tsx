@@ -13,6 +13,7 @@ export default function Home() {
                 <Container>
                     <GradientText>404</GradientText>
                     <Text>Page not found :(</Text>
+                    <HomeLink href="/">Return home?</HomeLink>
                 </Container>
             </Page>
         </>
@@ -43,17 +44,22 @@ const Container = styled.div`
 
 const GradientText = styled.div`
     color: transparent;
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: bold;
-    letter-spacing: 0.8rem;
     background: linear-gradient(to right, #7303c0, #f64f59, #fdeff9);
     background-clip: text;
     -webkit-background-clip: text;
     width: 19rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 `;
 
 const Text = styled.div`
-    font-size: 1.75rem;
-    color: #ccc;
+    font-size: 1rem;
+    color: #e6e6e6;
+    margin-bottom: 0.5rem;
+`;
+
+const HomeLink = styled.a`
+    color: #fff;
+    text-decoration: none;
 `;
