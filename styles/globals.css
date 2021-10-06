@@ -8,6 +8,7 @@ body {
     font-size: 16pt;
     scroll-behavior: smooth;
     scrollbar-width: thin;
+    overflow-x: hidden;
 
     @media(max-width: 1500px){
         font-size: 13pt;

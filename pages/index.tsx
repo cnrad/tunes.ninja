@@ -298,8 +298,6 @@ const Page = styled.div`
 
     background: url('https://cdn.discordapp.com/attachments/840639176361771071/879170608741621810/unknown.png');
     background-size: cover;
-    overflow-x: hidden;
-    overflow-y: scroll;
 `;
 
 const Top = styled.div`
