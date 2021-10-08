@@ -4,15 +4,18 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: "Krona One", sans-serif;
+    font-family: 'Krona One', sans-serif;
     font-size: 16pt;
     scroll-behavior: smooth;
     scrollbar-width: thin;
     overflow-x: hidden;
+    width: 100%;
 
-    @media(max-width: 1500px){
+    @media (max-width: 1500px) {
         font-size: 13pt;
         overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100%;
     }
 }
 
@@ -24,6 +27,6 @@ body {
 
     --gradient-color-1: #632a6b;
     --gradient-color-2: #5f317a;
-    --gradient-color-3: #4F007C;
-    --gradient-color-4: #83008F;
+    --gradient-color-3: #4f007c;
+    --gradient-color-4: #83008f;
 }
