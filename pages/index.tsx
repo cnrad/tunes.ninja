@@ -112,6 +112,13 @@ export default function Home() {
                     content="Supercharged Discord bot bridging the gap between music streaming services."
                 />
                 <meta property="twitter:image" content="/meta.png" />
+
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
+                />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black" />
             </Head>
 
             <Page>

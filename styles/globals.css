@@ -9,13 +9,13 @@ body {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     overflow-x: hidden;
-    width: 100%;
+    width: 100vw;
 
     @media (max-width: 1500px) {
         font-size: 13pt;
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 100%;
+        width: 100vw;
     }
 }
 
